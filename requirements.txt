@@ -4,3 +4,5 @@ pydantic
 pydantic-core
 langchain-core
 langchain-groq
+langchain_community
+bs4
