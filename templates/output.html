@@ -14,17 +14,22 @@
       <p>This site interprets the page you have given.You can enter the url of the page which you want interpreted</p>
       <h3 style="color: rgb(120, 120, 120); margin-bottom: 4px;">Enter url below</h3>
       <div>
-        <form action="/output" method="POST">
-          <input type="text" placeholder="url" name="url" style="margin-bottom: 4px;"><br>
-          <input type="submit">
-
-
-        </form>
-        
+        <input type="text" placeholder="url" style="margin-bottom: 4px;">
       </div>
-      
+      <button>Submit</button>
     
     </div>
-      
+    <div>
+      {% for job in jobs %}
+      <div>
+        <h3 style="margin-bottom: 2px;">{{job['role']}}</h3>
+        <div><b>Description:</b>{{job['description']}}</div>
+        <div><b>Experience:</b>{{job['experience']}}</div>
+        <div><b>Skills:</b>{{job['skills']}}</div>
+        
+      </div>
+      {% endfor %}
+    </div> 
+    {{data}}   
   </body>
 </html>
