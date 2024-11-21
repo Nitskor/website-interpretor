@@ -1,5 +1,6 @@
 Flask
 gunicorn
-langchain
-langchain_groq
-langchain_community
+pydantic
+pydantic-core
+langchain-core
+langchain-groq

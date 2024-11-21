@@ -19,5 +19,16 @@
       <button>Submit</button>
     
     </div>
+    <div>
+      {% for job in jobs %}
+      <div>
+        <h3 style="margin-bottom: 2px;">{{job['role']}}</h3>
+        <div><b>Description:</b>{{job['description']}}</div>
+        <div><b>Experience:</b>{{job['experience']}}</div>
+        <div><b>Skills:</b>{% for skill in job['skills'] %} {{skill}}, {% endfor %}</div>
+        
+      </div>
+      {% endfor %}
+    </div>    
   </body>
 </html>

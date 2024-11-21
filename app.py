@@ -8,10 +8,15 @@ app = Flask(__name__)
 loader = WebBaseLoader("https://jobs.nike.com/?jobSearch=true&jsOffset=0&jsSort=posting_start_date&jsLanguage=en&error=jobPost")
 page_data = clean_text(loader.load().pop().page_content)
 
+chain = Chain()
+try:
+    jobs = chain.extract_jobs(page_data)
+except Exception as e:
+    raise f"Error: {e}"
 
 @app.route('/')
 def hello_world():    
-    return page_data
+    return render_template('home.html',jobs=jobs)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',debug=True)
